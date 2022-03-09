@@ -67,9 +67,11 @@ def draw_grid():
 
 
 def main_loop():
+    global grid
     quitting = False
     while not quitting:  # main game loop.  It runs forever
         for event in pygame.event.get():
+            do_game_logic(grid)
             surface.fill(BLACK)
             draw_grid()
             pygame.display.update()
@@ -86,6 +88,13 @@ def init_game():
     surface = pygame.display.set_mode((ncols*gridsize, nrows*gridsize))
     # Set the window title
     pygame.display.set_caption("Hello World")
+
+
+def do_game_logic(grid):
+    # This is where we'll fill in somethign to make the game happen.
+    # you just have to modify the grid object so that numbers move
+    # around.
+    pass  # Pass is for when you don't have anything to do yet.  without it would be a syntax error
 
 
 def main():
