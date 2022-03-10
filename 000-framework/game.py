@@ -21,7 +21,7 @@ nrows = 4
 ncols = 3
 
 # How many pixels across will each grid be?
-gridsize = 100
+gridsize = 50
 
 grid = np.zeros((nrows, ncols), dtype=int)
 grid[0, 0]             = 1
@@ -71,7 +71,7 @@ def main_loop():
     quitting = False
     while not quitting:  # main game loop.  It runs forever
         for event in pygame.event.get():
-            do_game_logic(grid)
+            do_game_logic(grid, event)
             surface.fill(BLACK)
             draw_grid()
             pygame.display.update()
@@ -90,11 +90,16 @@ def init_game():
     pygame.display.set_caption("Hello World")
 
 
-def do_game_logic(grid):
+def do_game_logic(grid, event):
     # This is where we'll fill in somethign to make the game happen.
     # you just have to modify the grid object so that numbers move
     # around.
-    pass  # Pass is for when you don't have anything to do yet.  without it would be a syntax error
+    # Pass is for when you don't have anything to do yet.  without it would be a syntax error
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_LEFT:
+            pass
+        if event.key == pygame.K_RIGHT:
+            pass
 
 
 def main():
